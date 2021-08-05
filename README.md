@@ -46,7 +46,6 @@ tar -xf modwifi-4.4-1.tar.gz
 cd drivers && make defconfig-ath9k-debug
 make
 sudo make install
-cd ..
 ```
 ### 3. Update firmware of Wi-Fi cards
 Backup your Wi-Fi cardś driver and modify them using the following commands
@@ -86,7 +85,7 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
  
  * `wlan0`: Wireless interface on the channel of AP which listens and injects packets on the real channel
  * `wlan1`: Wireless interface that runs the Rogue AP or cloned AP
- * `wlan1`: Wireless Interface used to jam the targeted AP
+ * `wlan2`: Wireless Interface used to jam the targeted AP
  * `"testnet"`: SSID of the target network
  * `mitm.pcap`: Capture traffic from cloned AP to clients to .pcap file
  *  `dual`: Indicates to attack both clients
