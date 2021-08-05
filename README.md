@@ -16,7 +16,7 @@ This tool is tested with the following software platforms and hardware
   * Dell Inspiron 15 30000 series
   * OS: Microsoft 10
 * Victim Device 2
-  * Samsung Galxy S7 Edge
+  * Samsung Galaxy S7 Edge
   * OS: Adroid 8.0.0
   
 * Access Point:
@@ -73,7 +73,7 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
    *make all
 ```
 ## Attack Tool Usage
- Before executing tool, we need to change monitor mode on three interfaces. This can be done using the following script
+ Before executing tool, we need to change monitor mode on three interfaces. Use ´airmon-ng´ or ´iwconfig´ command to know names of wireless interfaces. Then use the following script to enable monitor mode on them.
  ```
  $sudo ./config_dongle.sh -i wlan# -k
  ```
