@@ -80,15 +80,16 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
  The attack tool can be executed using follwoing command line arguments. Download attack folder from the link (Under construction). 
 
  ```
- $sudo ./channelmitm -a wlan0 -c wlan1 -j wlan2 -s testnetwork -d mitm.pcap --dua
+ $sudo ./channelmitm -a wlan0 -c wlan1 -j wlan2 -s testnetwork -d mitm.pcap --dual
  ```
  ### Below are the details of wireless interfaces
  
  * `wlan0`: Wireless interface on the channel of AP which listens and injects packets on the real channel
  * `wlan1`: Wireless interface that runs the Rogue AP or cloned AP
- *  wlan2`: Wireless Interface used to jam the targeted AP
+ * `wlan1`: Wireless Interface used to jam the targeted AP
  * `"testnet"`: SSID of the target network
  * `mitm.pcap`: Capture traffic from cloned AP to clients to .pcap file
+ *  `dual`: Indicates to attack both clients
  * You can see many other options running `sudo ./channelmitm `!
  
 
