@@ -62,9 +62,10 @@ $make -C target_firmware
 At the end, two new files named "htc_7010.fw" and "htc_9271.fw" will be appeared in the folder named "target_firmware". Now, replace these two files respectively with "htc_7010-1.4.0.fw" and "htc_9271-1.4.0.fw" located in "/lib/fimware/ath9k_htc" directory. This can be done by 
 ```
 $sudo cp /home/manesh/Desktop/modwifi-ath9k-htc-research/target_firmware/htc_7010.fw /lib/firmware/ath9k_htc/htc_7010-1.4.0.fw
+$reboot
 ```
 ### 4. Update and compile attack codes
-First, we need to rectify certain bugs in the sources codes of MC-MitM attack. As an easy step, modified sources codes/tools can be downloaded from [this link] (https://github.com/Rot127/modwifi-tools/tree/modernization). Downalod the ZIP folder and extract it, which will create a folder named "modwifi-tools-modernization". Then do the following
+First, we need to rectify certain bugs in the sources codes of MC-MitM attack. As an easy step, modified sources codes/tools can be downloaded from [this link](https://github.com/Rot127/modwifi-tools/tree/modernization). Downalod the ZIP folder and extract it, which will create a folder named "modwifi-tools-modernization". Then do the following
 ```
 1. Go to modwifi-tools-modernization folder
 2. open channelmitm.cpp file
@@ -95,7 +96,7 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
  * You can see many other options running `sudo ./channelmitm`
  ### Troubleshooting
  ##### General troubleshooting 
- General troubleshooting procedures can be found in [this link] (https://github.com/vanhoefm/modwifi#troubleshooting).
+ General troubleshooting procedures can be found in [this link](https://github.com/vanhoefm/modwifi#troubleshooting).
  ##### Other Common errors
  Some common errors while executing channelmitm are: 
  1) "One or more test failed on the given interfaces", 
@@ -110,8 +111,8 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
  function and update the follwoing two codes in it. The codes are
  ```
  uint8_t *probereqtags = tl_probe_tags;
-	uint8_t probetagslen = tl_probe_tags_len;
-```
+ uint8_t probetagslen = tl_probe_tags_len;
+ ```
  In my case, I use TL-WN722N. So I update as above. Appropriate tags can be found in "probe_requests.h" header file in "modwifi-tools-modernization" folder.
 
  ## Demonstration Video
