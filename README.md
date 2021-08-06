@@ -121,10 +121,16 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
   
 ## Analysis of network behavior during MC-MitM attack
 In this section,specifc network flow during attack is observed. More specifically, the presence of constant jamming frames or malformed frames due to reactive jamming, presence of multiple beacons (with same SSID and BSSID) on two different channels, etc are analyzed.
-##### When constant jamming is used with MC-MitM attack
-The **network trace or pcap file** captured during the MC-MitM attack can be [viewed online on cloudshark](https://www.cloudshark.org/captures/a7843005db21).
-Then, use the following **filter** to see continous jamming triggering frame"
-##### When reactive jamming is used with MC-MitM attack
-xxxxx
-  
+#### When constant jamming is used with MC-MitM attack
+[`base_variant_channel_1.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_1.pcap) is the pcap file containing network packets captured on real channel (channel 1) during the attack. 
+Then, use the following `amsdu-inject --ap` filter to see continous jamming triggering frame".
+#### When reactive jamming is used with MC-MitM attack
+[`base_variant_channel_1.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_1.pcap) is the pcap file containing network packets captured on real channel (channel 1) during the attack. 
+Then, use the following `amsdu-inject --ap` filter to see continous jamming triggering frame".
+#### Multiple beacons (with same SSID and BSSID) on different channels at the same time
+[`base_variant_channel_1.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_1.pcap) is the pcap file containing network packets captured on real channel (channel 1) during the attack. 
+Then, use the following `amsdu-inject --ap` filter to see continous jamming triggering frame".
+
+
+
 ### References
