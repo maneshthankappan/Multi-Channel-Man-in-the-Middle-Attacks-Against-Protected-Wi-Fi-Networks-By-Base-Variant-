@@ -35,17 +35,19 @@ This tool is tested with the following software platforms and hardware
 $sudo apt-get update
 $sudo apt-get install build-essential libncurses-dev bison flex libssl-dev
 $sudo apt-get install g++ libssl-dev libnl-3-dev libnl-genl-3-dev cmake
+
 ```
 Note:It is better to install each package indiviually
 ### 2. Install the following modwifi package
 Various modwifi packages can be downloaded from [this link](https://github.com/vanhoefm/modwifi/tree/master/releases) according to your linux kernel. However,I use the package "modwifi-4.4-1.tar.gz" since my linux kernal is 4.4. Then perform the following..
 ```
-mkdir modwifi && cd modwifi
-wget https://github.com/vanhoefm/modwifi/raw/master/releases/modwifi-4.4-1.tar.gz
-tar -xf modwifi-4.4-1.tar.gz
-cd drivers && make defconfig-ath9k-debug
-make
-sudo make install
+$mkdir modwifi && cd modwifi
+$wget https://github.com/vanhoefm/modwifi/raw/master/releases/modwifi-4.4-1.tar.gz
+$tar -xf modwifi-4.4-1.tar.gz
+$cd drivers && make defconfig-ath9k-debug
+$make
+$sudo make install
+$reboot
 ```
 ### 3. Update firmware of Wi-Fi cards
 Backup your Wi-Fi cardś driver and modify them using the following commands
@@ -54,25 +56,26 @@ compgen -G /lib/firmware/ath9k_htc/*backup || for FILE in /lib/firmware/ath9k_ht
 ```
 To compile and update new firmware, clone the [ath9k-htc repository ](https://github.com/vanhoefm/modwifi-ath9k-htc) or download the ZIP folder, extract the folder, and perform the following
 ```
-make toolchain
-make -C target_firmware
+$make toolchain
+$make -C target_firmware
 ```
 At the end, two new files named "htc_7010.fw" and "htc_9271.fw" will be appeared in the folder named "target_firmware". Now, replace these two files respectively with "htc_7010-1.4.0.fw" and "htc_9271-1.4.0.fw" located in "/lib/fimware/ath9k_htc" directory. This can be done by 
 ```
-sudo cp /home/manesh/Desktop/modwifi-ath9k-htc-research/target_firmware/htc_7010.fw /lib/firmware/ath9k_htc/htc_7010-1.4.0.fw
+$sudo cp /home/manesh/Desktop/modwifi-ath9k-htc-research/target_firmware/htc_7010.fw /lib/firmware/ath9k_htc/htc_7010-1.4.0.fw
 ```
 ### 4. Update and compile attack codes
 First, we need to rectify certain bugs in the sources codes of MC-MitM attack. As an easy step, modified sources codes/tools can be downloaded from [this link] (https://github.com/Rot127/modwifi-tools/tree/modernization). Downalod the ZIP folder and extract it, which will create a folder named "modwifi-tools-modernization". Then do the following
 ```
-1. cd tools
+1. Go to modwifi-tools-modernization folder
 2. open channelmitm.cpp file
-3. Edit MAC address of the client/victim devices in lines 52 and 53 respectively.
+3. Edit MAC address of the client/victim devices in lines 52 and 53 respectively.Save the channelmitm.cpp file.
 4. Compile all files using following commands
-   *cmake CMakeLists.txt 
-   *make all
+   $cmake CMakeLists.txt 
+   $make all
 ```
 ## Attack Tool Usage
- Before executing tool, we need to change monitor mode on three interfaces. Use  `airmon-ng` or `iwconfig` command to retrive names of wireless interfaces. Then  use the following script to enable monitor mode on them.
+ Before executing tool, we need to enable monitor mode on three interfaces. Use  `airmon-ng` or `iwconfig` command to retrive names of wireless interfaces. Then  use the following script (available in Tools folder) to enable monitor mode on wireless interfaces.
+ Be inside "modwifi-tools-modernization" folder.
  ```
  $sudo ./config_dongle.sh -i wlan# -k
  ```
@@ -86,22 +89,37 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
  * `wlan0`: Wireless interface on the channel of AP which listens and injects packets on the real channel
  * `wlan1`: Wireless interface that runs the Rogue AP or cloned AP
  * `wlan2`: Wireless Interface used to jam the targeted AP
- * `"testnet"`: SSID of the target network
+ * `testnet`: SSID of the target network
  * `mitm.pcap`: Capture traffic from cloned AP to clients to .pcap file
- *  `dual`: Indicates to attack both clients
- * You can see many other options running `sudo ./channelmitm `!
- 
+ * `dual`: Indicates that attack targets both connected clients
+ * You can see many other options running `sudo ./channelmitm`
+ ### Troubleshooting
+ ##### General troubleshooting 
+ General troubleshooting procedures can be found in [this link] (https://github.com/vanhoefm/modwifi#troubleshooting).
+ ##### Other Common errors
+ Some common errors while executing channelmitm are: 
+ 1) "One or more test failed on the given interfaces", 
+ 2) "Failed to ping wlan#". To avoid these errors,   
+ In above cirumstances, verify whether firmware are correctly modified in respective folder. 
+ Another common error is the display of "." even after the attack started. This is because,
+ 1) The target client is still associated with the real AP, because something went wrong with the jamming.
+ 2) The beacon packet is received by the target client and it responds, but the fake client sends the incorrect probe request to the AP.
+ For example, if you use TL-WN722N to send out a probe request with AWUS036NHA-tags set, the handshake will fail sometimes. 
+ This is beacuse  each dongle has some specific  hardware properties it embeds in the probe request as tags.
+ To rectify above issues, its necessary to update tag sets used in probe responses function of channelmitm.cpp. Goto line 13689 or find "get_probe_response" 
+ function and update the follwoing two codes in it. The codes are
+ ```
+ uint8_t *probereqtags = tl_probe_tags;
+	uint8_t probetagslen = tl_probe_tags_len;
+```
+ In my case, I use TL-WN722N. So I update as above. Appropriate tags can be found in "probe_requests.h" header file in "modwifi-tools-modernization" folder.
 
- ### Files Generated
- After running the script for the first time, some new files will be generated:
-
-  ## Demonstration Video
+ ## Demonstration Video
 [![Analysis of Network behavior during channel switch announcements](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks/blob/main/thumb.jpg)](https://www.youtube.com/watch?v=axqbioyjom0)
 
-  ## Analysis of network behavior during MC-MitM attack
+  
+## Analysis of network behavior during MC-MitM attack
   Under construction  
   
-  ## Troubleshooting
-  Under construction  
- hhhhhh
-  ### References
+  
+### References
