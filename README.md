@@ -128,8 +128,8 @@ Then, use the following `amsdu-inject --ap` filter to see continous jamming trig
 [`base_variant_channel_1.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_1.pcap) is the pcap file containing network packets captured on real channel (channel 1) during the attack. 
 Then, use the following `amsdu-inject --ap` filter to see continous jamming triggering frame".
 #### Multiple beacons (with same SSID and BSSID) on different channels at the same time
-[`base_variant_channel_1.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_1.pcap) is the pcap file containing network packets captured on real channel (channel 1) during the attack. 
-Then, use the following `amsdu-inject --ap` filter to see continous jamming triggering frame".
+[`base_variant_channel_13.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_13.pcap) is the pcap file containing network packets captured on real channel (channel 1) during the attack. 
+Then, use the following `wlan.fc.type_subtype ==8 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13` filter to see beacons on this channel.
 
 
 
