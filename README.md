@@ -109,7 +109,7 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
  For example, if you use TL-WN722N to send out a probe request with AWUS036NHA-tags set, the handshake will fail sometimes. 
  This is beacuse  each dongle has some specific  hardware properties it embeds in the probe request as tags.
  To rectify above issues, it is necessary to update tag sets used in probe responses function of channelmitm.cpp. Goto line # 13689 or find "get_probe_response" 
- function and update the follwoing two codes in it. The codes are
+ function and update the following two codes in it. The codes are
  ```
  uint8_t *probereqtags = tl_probe_tags;
  uint8_t probetagslen = tl_probe_tags_len;
