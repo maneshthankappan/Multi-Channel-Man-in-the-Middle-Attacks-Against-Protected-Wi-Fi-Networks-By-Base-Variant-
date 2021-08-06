@@ -124,7 +124,7 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
 In this section,specifc network flow during attack is observed. More specifically, the presence of constant jamming frames or malformed frames due to reactive jamming, presence of multiple beacons (with same SSID and BSSID) on two different channels, etc are analyzed.
 #### When constant jamming is used with MC-MitM attack
 [`base_variant_channel_1.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_1.pcap) is the pcap file containing network packets captured on real channel (channel 1) during the attack. 
-Then, use the following `wlan.addr==88:88:88.88:88:88` filter to see continous jamming triggering frame".
+Then, use the following `wlan.addr==88:88:88.88:88:88` filter to see "**continous jamming triggering frame**".
 #### When reactive jamming is used with MC-MitM attack
 [`base_variant_channel_1.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_1.pcap) is the pcap file containing network packets captured on real channel (channel 1) during the attack. 
 Then, use the following `xxxxxxxxxxx` filter to see continous jamming triggering frame".
