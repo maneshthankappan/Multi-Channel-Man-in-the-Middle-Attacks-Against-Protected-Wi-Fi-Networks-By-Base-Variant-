@@ -99,12 +99,13 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
  General troubleshooting procedures can be found in [this link](https://github.com/vanhoefm/modwifi#troubleshooting).
  ##### Other Common errors
  Some common errors while executing channelmitm are: 
- 1) "One or more test failed on the given interfaces", 
- 2) "Failed to ping wlan#".   
+ * "One or more test failed on the given interfaces", 
+ * "Failed to ping wlan#".   
  In above cirumstances, verify whether firmware are correctly modified in respective folder. 
+ 
  Another common error is the display of "." even after the attack started. This is because,
- 1) The target client is still associated with the real AP, because something went wrong with the jamming.
- 2) The beacon packet is received by the target client and it responds, but the fake client sends the incorrect probe request to the AP.
+ * The target client is still associated with the real AP, because something went wrong with the jamming.
+ * The beacon packet is received by the target client and it responds, but the fake client sends the incorrect probe request to the AP.
  For example, if you use TL-WN722N to send out a probe request with AWUS036NHA-tags set, the handshake will fail sometimes. 
  This is beacuse  each dongle has some specific  hardware properties it embeds in the probe request as tags.
  To rectify above issues, it is necessary to update tag sets used in probe responses function of channelmitm.cpp. Goto line # 13689 or find "get_probe_response" 
