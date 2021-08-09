@@ -39,7 +39,7 @@ $sudo apt-get install g++ libssl-dev libnl-3-dev libnl-genl-3-dev cmake
 ```
 Note:It is better to install each package indiviually
 ### 2. Install the following modwifi package
-Various modwifi packages can be downloaded from [this link](https://github.com/vanhoefm/modwifi/tree/master/releases) according to your linux kernel. However,I use the package "modwifi-4.4-1.tar.gz" since my linux kernal is 4.4. Then perform the following..
+Various modwifi packages can be downloaded from [this link](https://github.com/vanhoefm/modwifi/tree/master/releases) according to your linux kernel. However,I use the package "modwifi-4.4-1.tar.gz" since my linux kernal is 4.4. Moreover, a linux with kernel version 4.4 or below is required to compile firmware of ath9k_htc as described in next step. Then perform the following..
 ```
 $mkdir modwifi && cd modwifi
 $wget https://github.com/vanhoefm/modwifi/raw/master/releases/modwifi-4.4-1.tar.gz
@@ -137,8 +137,6 @@ Then, use the following `wlan.fc.type_subtype ==8 && wlan.bssid == c0:4a:00:33:3
 [`base_variant_channel_13.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_13.pcap) is the pcap file containing network packets captured on real channel (channel 13) during the attack. 
 Then, use the following `wlan.fc.type_subtype ==8 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13` filter to see beacons on this channel. To filter probe responses on this channel, use the filter `wlan.fc.type_subtype ==5 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13`.
 
-[`base_variant_channel_13.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_13.pcap) is the pcap file containing network packets captured on real channel (channel 13) during the attack. 
-Then, use the following `wlan.fc.type_subtype ==8 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13` filter to see beacons on this channel. To filter probe responses on this channel, use the filter `wlan.fc.type_subtype ==5 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13`.
 
 ##### Observations
 
