@@ -132,9 +132,15 @@ Then, use the following `xxxxxxxxxxx` filter to see continous jamming triggering
 Following are the network traces captured for about 10 minutes of attack.
 
 [`base_variant_channel_1.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_1.pcap) is the pcap file containing network packets captured on real channel (channel 1) during the attack. 
-Then, use the following `wlan.fc.type_subtype ==8 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13` filter to see filter to see beacons on this channel.To filter probe responses on this channel, use the filter `wlan.fc.type_subtype ==5 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13`.
+Then, use the following `wlan.fc.type_subtype ==8 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13` filter to see beacons on this channel.To filter probe responses on this channel, use the filter `wlan.fc.type_subtype ==5 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13`.
 
 [`base_variant_channel_13.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_13.pcap) is the pcap file containing network packets captured on real channel (channel 13) during the attack. 
 Then, use the following `wlan.fc.type_subtype ==8 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13` filter to see beacons on this channel. To filter probe responses on this channel, use the filter `wlan.fc.type_subtype ==5 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13`.
+
+[`base_variant_channel_13.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_13.pcap) is the pcap file containing network packets captured on real channel (channel 13) during the attack. 
+Then, use the following `wlan.fc.type_subtype ==8 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13` filter to see beacons on this channel. To filter probe responses on this channel, use the filter `wlan.fc.type_subtype ==5 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13`.
+
+##### Observations
+
 
 ### References
