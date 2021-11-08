@@ -117,7 +117,7 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
  In my case, I use TL-WN722N. So I update as above. Appropriate tags can be found in "probe_requests.h" header file in "modwifi-tools-modernization" folder.
 
  ## Demonstration Video
-[![Analysis of Network behavior during channel switch announcements](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks/blob/main/thumb.jpg)](https://www.youtube.com/watch?v=axqbioyjom0)
+ Under development
 
   
 ## Analysis of network behavior during MC-MitM attack
