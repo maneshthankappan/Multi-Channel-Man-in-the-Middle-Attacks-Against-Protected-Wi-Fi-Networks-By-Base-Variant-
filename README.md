@@ -26,8 +26,8 @@ This tool is tested with the following software platforms and hardware
   * Operating mode:802.11g
   * Configured with 50% TX power and channel 1
   * SSID:testnet
-  * Wireless Security: WPA/WPA2-PSK
-  * Encryption Algorithm: TKIP
+  * Wireless Security: WPA/WPA2/WPA3-PSK
+  * Encryption Algorithm: TKIP/CCMP
   
 ## Prerequisites and Installation Procedure
 ### 1. Install the following dependencies on Xubuntu
@@ -116,29 +116,12 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
  ```
  In my case, I use TL-WN722N. So I update as above. Appropriate tags can be found in "probe_requests.h" header file in "modwifi-tools-modernization" folder.
 
- ## Demonstration Video
+ ## Notes
+ This attack is initially intended to expoit vulnerabilities with TKIP in WPA. We do not perfrom any such exploitations. Insted, we acquired MC-MitM position and in WPA2/3 networks and successfully captured the ecnrypted the wireless frames between the victim and the AP by snooping on channels. 
+ ## Some screen shots
  Under development
 
-  
-## Analysis of network behavior during MC-MitM attack
-In this section,specifc network flow during attack is observed. More specifically, the presence of constant jamming frames or malformed frames due to reactive jamming, presence of multiple beacons (with same SSID and BSSID) on two different channels, etc are analyzed.
-#### When constant jamming is used with MC-MitM attack
-[`base_variant_channel_1.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_1.pcap) is the pcap file containing network packets captured on real channel (channel 1) during the attack. 
-Then, use the following `wlan.addr==88:88:88.88:88:88` filter to see "**continous jamming triggering frame**".
-#### When reactive jamming is used with MC-MitM attack
-[`base_variant_channel_1.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_1.pcap) is the pcap file containing network packets captured on real channel (channel 1) during the attack. 
-Then, use the following `xxxxxxxxxxx` filter to see continous jamming triggering frame".
-#### Multiple beacons (with same SSID and BSSID) on different channels at the same time
-Following are the network traces captured for about 10 minutes of attack.
 
-[`base_variant_channel_1.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_1.pcap) is the pcap file containing network packets captured on real channel (channel 1) during the attack. 
-Then, use the following `wlan.fc.type_subtype ==8 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13` filter to see beacons on this channel.To filter probe responses on this channel, use the filter `wlan.fc.type_subtype ==5 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13`.
-
-[`base_variant_channel_13.pcap`](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/Network-Traces/base_variant_channel_13.pcap) is the pcap file containing network packets captured on real channel (channel 13) during the attack. 
-Then, use the following `wlan.fc.type_subtype ==8 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13` filter to see beacons on this channel. To filter probe responses on this channel, use the filter `wlan.fc.type_subtype ==5 && wlan.bssid == c0:4a:00:33:3b:62 && wlan_radio.channel ==13`.
-
-
-##### Observations
 
 
 ### References
