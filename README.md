@@ -1,7 +1,6 @@
 # Multi Channel Man-in-the-Middle Attacks Against Protected Wi-Fi Networks
-This repository describes how to perform MC-MitM (Base Variant) attack using [modwifi tools](https://github.com/vanhoefm/modwifi).To successfully implement this attack, it is important to keep specific linux OS kernels, Wi-Fi cards and several changes in the attack codes. Here, I enlighten about various procedures to perform the MC-MitM attack on WPA2/3 networks.    
-## Brief Background  
-Under Construction
+This repository describes how to perform MC-MitM (Base Variant) attack using [modwifi tools](https://github.com/vanhoefm/modwifi).To successfully implement this attack, it is important to keep specific linux OS kernels, Wi-Fi cards and several changes in the attack codes. Here, I explain about various procedures to perform the MC-MitM attack on WPA2/3 networks.    
+
 ## Attack Environment Setup
 This tool is tested with the following software platforms and hardware
 
@@ -15,9 +14,12 @@ This tool is tested with the following software platforms and hardware
 * Victim Device 1
   * Dell Inspiron 15 30000 series
   * OS: Microsoft 10
+  * Wireless Security: WPA3-PSK
+  
 * Victim Device 2
   * Samsung Galaxy S7 Edge
   * OS: Adroid 8.0.0
+  * Wireless Security: WPA/WPA2-PSK
   
 * Access Point:
   * TP-LINK Wireless N Router (TL-WR841N)
@@ -26,7 +28,7 @@ This tool is tested with the following software platforms and hardware
   * Operating mode:802.11g
   * Configured with 50% TX power and channel 1
   * SSID:testnet
-  * Wireless Security: WPA/WPA2/WPA3-PSK
+  * Wireless Security: WPA2/WPA3-PSK
   * Encryption Algorithm: TKIP/CCMP
   
 ## Prerequisites and Installation Procedure
@@ -117,7 +119,7 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
  In my case, I use TL-WN722N. So I update as above. Appropriate tags can be found in "probe_requests.h" header file in "modwifi-tools-modernization" folder.
 
  ## Notes
- This attack is initially intended to expoit vulnerabilities with TKIP in WPA. We do not perfrom any such exploitations. Insted, we acquired MC-MitM position and in WPA2/3 networks and successfully captured the ecnrypted the wireless frames between the victim and the AP by snooping on channels. 
+ This attack is initially intended to expoit vulnerabilities with TKIP in WPA. I do not perfrom any such exploitations. Instead, I acquired MC-MitM position against WPA2/3 networks and successfully captured the encrypted the wireless frames between the victim and the AP by snooping on channels. 
  ## Some screen shots
  Under development
 
