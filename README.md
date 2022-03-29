@@ -119,7 +119,7 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
  In my case, I use TL-WN722N. So I update as above. Appropriate tags can be found in "probe_requests.h" header file in "modwifi-tools-modernization" folder.
 
  ## Notes
- This attack is initially intended to expoit vulnerabilities with TKIP in WPA. I do not perfrom any such exploitations. Instead, I acquired MC-MitM position against WPA2/3 networks and successfully captured the encrypted the wireless frames between the victim and the AP by snooping on channels. 
+ This attack is initially intended to expoit vulnerabilities with TKIP in WPA. We do not perfrom any such exploitations. Instead, We acquired MC-MitM position against WPA2/3 networks and successfully captured the encrypted the wireless frames between the victim and the AP by snooping on channels. 
  ## Some screen shots
  Under development
 
