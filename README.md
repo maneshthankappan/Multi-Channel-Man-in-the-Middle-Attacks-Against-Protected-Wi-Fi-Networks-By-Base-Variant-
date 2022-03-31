@@ -2,7 +2,6 @@
 This repository describes how to perform MC-MitM (Base Variant) attack using [modwifi tools](https://github.com/vanhoefm/modwifi).To successfully implement this attack, it is important to keep specific linux OS kernels, Wi-Fi cards and several changes in the attack codes. Here, I explain about various procedures to perform the MC-MitM attack on WPA2/3 networks.    
 
 ## Attack Environment Setup
-This tool is tested with the following software platforms and hardware
 <p align="center">
   <img src="https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/MC-MitM-BV-Attack.png">
 </p>
