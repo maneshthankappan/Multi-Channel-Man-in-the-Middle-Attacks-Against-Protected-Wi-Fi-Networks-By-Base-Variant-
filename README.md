@@ -19,11 +19,7 @@ This repository describes how to perform MC-MitM (Base Variant) attack using [mo
   * OS: Microsoft 10
   * Wireless Security: WPA3-PSK
   
-* Victim Device 2
-  * Samsung Galaxy S7 Edge
-  * OS: Adroid 8.0.0
-  * Wireless Security: WPA/WPA2-PSK
-  
+ 
 * Access Point:
   * TP-LINK Wireless N Router (TL-WR841N)
   * Hardware Version: A2
