@@ -3,7 +3,11 @@ This repository describes how to perform MC-MitM (Base Variant) attack using [mo
 
 ## Attack Environment Setup
 This tool is tested with the following software platforms and hardware
+<p align="center">
+  <img src="https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/MC-MitM-BV-Attack.png">
+</p>
 
+## Specification of devices used
 * Attacker Machine
   * HP Elite 8300 SFF Quad Core
   * OS: XUbuntu 16.04.7 LTS
