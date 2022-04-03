@@ -3,7 +3,7 @@ This repository describes how to perform MC-MitM (Base Variant) attack using [mo
 
 ## Attack Environment Setup
 <p align="center">
-  <img src="https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/MC-MitM-BV-Attack.png">
+  <img src="https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-/blob/main/MC-MitM-Base%20Variant-Attack%20Setup.jpeg">
 </p>
 
 ## Specification of devices used
