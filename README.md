@@ -84,14 +84,14 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
  The attack tool can be executed using follwoing command line arguments. Download attack folder from the link (Under construction). 
 
  ```
- $sudo ./channelmitm -a wlan0 -c wlan1 -j wlan2 -s testnetwork -d mitm.pcap --dual
+ $sudo ./channelmitm -a wlan0 -c wlan1 -j wlan2 -s Smart-Home-AP2 -d mitm.pcap --dual
  ```
  ### Below are the details of wireless interfaces
  
  * `wlan0`: Wireless interface on the channel of AP which listens and injects packets on the real channel
  * `wlan1`: Wireless interface that runs the Rogue AP or cloned AP
  * `wlan2`: Wireless Interface used to jam the targeted AP
- * `testnet`: SSID of the target network
+ * `Smart-Home-AP2`: SSID of the target network
  * `mitm.pcap`: Capture traffic from cloned AP to clients to .pcap file
  * `dual`: Indicates that attack targets both connected clients
  * You can see many other options running `sudo ./channelmitm`
@@ -119,10 +119,15 @@ First, we need to rectify certain bugs in the sources codes of MC-MitM attack. A
 
  ## Notes
  This attack is initially intended to expoit vulnerabilities with TKIP in WPA. We do not perfrom any such exploitations. Instead, We acquired MC-MitM position against WPA2/3 networks and successfully captured the encrypted the wireless frames between the victim and the AP by snooping on channels. 
- ## Demonstration Video
-[![Analysis of Network behavior during channel switch announcements](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks/blob/main/thumb.jpg)](https://www.youtube.com/watch?v=axqbioyjom0)
+ ## Sample screen shorts
+
 
 
 
 
 ### References
+
+  * https://github.com/vanhoefm/modwifi
+  * https://papers.mathyvanhoef.com/acsac2014.pdf
+
+
