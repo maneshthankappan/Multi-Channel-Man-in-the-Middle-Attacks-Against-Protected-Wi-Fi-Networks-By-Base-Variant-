@@ -8,7 +8,7 @@ This repository describes how to perform MC-MitM (Base Variant) attack using [mo
 
 ## Specification of devices used
 * Attacker Machine
-  * HP Elite 8300 SFF Quad Core
+  * Toshiba Portge
   * OS: XUbuntu 16.04.7 LTS
   * Kernel: 4.4.0-210-generic (Verify your kernel using "uname -r" command)
   * Three Wi-Fi Cards: Qualcomm Atheros Communications AR9271. Driver: ath9k_htc
@@ -26,7 +26,7 @@ This repository describes how to perform MC-MitM (Base Variant) attack using [mo
   * Firmware Version: 8.04
   * Operating mode:802.11g
   * Configured with 50% TX power and channel 1
-  * SSID:testnet
+  * SSID:Smart-Home-AP2
   * Wireless Security: WPA2/WPA3-PSK
   * Encryption Algorithm: TKIP/CCMP
   
