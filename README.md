@@ -11,7 +11,7 @@ This repository describes how to perform MC-MitM (Base Variant) attack using [mo
   * Toshiba Portge
   * OS: XUbuntu 16.04.7 LTS
   * Kernel: 4.4.0-210-generic (Verify your kernel using "uname -r" command)
-  * Three Wi-Fi Cards: Qualcomm Atheros Communications AR9271. Driver: ath9k_htc
+  * Three Wi-Fi Cards: TP-LINK WN722N, Qualcomm Atheros Communications AR9271 (Driver: ath9k_htc)
   * Two Wi-Fi cards working on two different channels and one for jamming the original channel of the Wi-Fi router
 
 * Victim Device 1
@@ -28,7 +28,7 @@ This repository describes how to perform MC-MitM (Base Variant) attack using [mo
   * Configured with 50% TX power and channel 1
   * SSID:Smart-Home-AP2
   * Wireless Security: WPA2/WPA3-PSK
-  * Encryption Algorithm: TKIP/CCMP
+  * Encryption Algorithm: CCMP
   
 ## Prerequisites and Installation Procedure
 ### 1. Install the following dependencies on Xubuntu
